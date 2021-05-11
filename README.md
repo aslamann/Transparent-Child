@@ -1,4 +1,4 @@
-# Divi-child
+# About Transparent-Child
 
 These files are used for my project called Transparent.
 
