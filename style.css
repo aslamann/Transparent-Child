@@ -1,0 +1,161 @@
+/*
+Theme Name: Divi Child Transparent
+Theme URI: http://www.elegantthemes.com/gallery/divi/
+Template: Divi
+Author: Elegant Themes and Anouk Slaman
+Author URI: http://www.elegantthemes.com
+Description: Smart. Flexible. Beautiful. Divi is the most powerful theme in our collection.
+Tags: responsive-layout,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar,custom-background,custom-colors,featured-images,full-width-template,post-formats,rtl-language-support,theme-options,threaded-comments,translation-ready
+Version: 4.9.3.1618235639
+Updated: 2021-04-12 13:53:59
+
+*/
+/*** Take out the divider line between content and sidebar ***/
+#main-content .container:before {background: none;}
+
+/*** Hide Sidebar for all pages ***/
+.page  #sidebar {display:none;}
+
+/*** Expand the content area to fullwidth ***/
+@media (min-width: 981px){
+    #left-area {
+        width: 100%;
+        padding: 23px 0px 0px !important;
+        float: none !important;
+    }
+}
+/* Fullscreen menu effect */
+.et_header_style_fullscreen .et_slide_in_menu_container{
+    visibility: hidden;
+    opacity: 1;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
+    transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+}
+.et_header_style_fullscreen .et_slide_in_menu_container.et_pb_fullscreen_menu_opened  {
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Bouncing arrow on header */
+.et_pb_fullwidth_header .et-pb-icon.scroll-down {
+    animation: fullwidth-header-bounce 2.2s ease-out infinite;
+}
+@keyframes fullwidth-header-bounce {
+    0% { transform:translateY(0%); }
+    12.5% { transform:translateY(20%); }
+    25% { transform:translateY(0%); }
+    37.5% { transform:translateY(20%); }
+    50% { transform:translateY(0%); }
+}
+
+@media all and (min-width: 980px){
+
+    /*adjust position of navigation menu*/
+    .et_header_style_fullscreen .et_pb_fullscreen_nav_container {
+        width: 100%;
+    }
+
+    .et_slide_in_menu_container.et_pb_fullscreen_menu_opened.et_pb_fullscreen_menu_animated {
+        padding-top: 0px !important;
+    }
+    /* adjust font or padding of nav menu */
+    .et_slide_in_menu_container #mobile_menu_slide li.current-menu-item a, .et_slide_in_menu_container #mobile_menu_slide li a {
+        padding: 35px 0!important;
+    }
+
+    /*adjust position of top menu and elements*/
+    .et_header_style_fullscreen .et_slide_menu_top {
+        width: 50%;
+        text-align: center;
+        display: table !important;
+        vertical-align: middle;
+        position: initial;
+        float: right;
+        height: 100%;
+    }
+    .et_header_style_fullscreen .et_pb_top_menu_inner {
+        display: table-cell !important;
+        position: relative;
+        vertical-align: middle;
+        text-align: left!important;
+        padding: 0 15%;
+        width: 100%;
+    }
+
+    .et_header_style_fullscreen .et_slide_menu_top ul.et-social-icons {
+        width: 100%;
+    }
+
+    .et_header_style_fullscreen div#et-info {
+        float: none!important;
+        width: 100%;
+    }
+
+    .et_header_style_fullscreen div#et-info span {
+        display: block;
+        margin-bottom: 30px;
+
+    }
+
+    /*make search bar and icon larger*/
+    .et_header_style_fullscreen .et_slide_menu_top .et-search-form {
+        margin-top: 30px !important;
+        margin-bottom: 15px;
+        width: 100% !important;
+        max-width: 300px !important;
+        padding: 25px !important;
+    }
+    .et_slide_menu_top button#searchsubmit_header{
+        width: 50px;
+        height: 41px;
+    }
+    .et_slide_menu_top button#searchsubmit_header:before {
+        font-size: 22px;
+    }
+
+    /*make menu right aligned*/
+    .et_header_style_fullscreen ul#mobile_menu_slide {
+        text-align: right;
+        padding: 0 15%;
+    }
+
+    /*make close menu icon larger*/
+    .et_pb_fullscreen_menu_animated .mobile_menu_bar:before {
+        font-size: 150px;
+    }
+
+    /*dark background overlay*/
+    .et_slide_menu_top {
+        background: none;
+    }
+
+    /*take out background opacity*/
+    .et_header_style_fullscreen .et_slide_in_menu_container.et_pb_fullscreen_menu_opened {
+        opacity: 1;
+    }
+
+    /*increase size of down arrow for sub menu items*/
+    .et_slide_in_menu_container span.et_mobile_menu_arrow {
+        opacity: 1;
+
+    }
+    .et_slide_in_menu_container #mobile_menu_slide .et_mobile_menu_arrow:before {
+        font-size: 34px;
+    }
+
+}
+/* hide wordpress admin bar */
+#wpadminbar #wp-admin-bar-wp-logo>.ab-item {
+    visibility:hidden
+}
+/* fix youzify/divi bug */
+
+.youzify-page-main-content {
+    padding: 100px 0 0!important;
+}
